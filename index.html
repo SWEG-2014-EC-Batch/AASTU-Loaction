@@ -33,7 +33,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 22px;
             transition: background-color 0.2s;
         }
 
@@ -106,6 +106,18 @@
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
+        .toggle-btn {
+            text-align: center;
+            background-color: #e67e22;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.2s;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -116,6 +128,7 @@
     <div class="search-container">
         <input type="text" id="searchInput" placeholder="Search locations...">
     </div>
+    <button class="toggle-btn" onclick="toggleImages()">Toggle Images</button>
     <div class="nav-menu">
         <button class="category-btn active" onclick="showCategory('all')">All Locations</button>
         <button class="category-btn" onclick="showCategory('dorms')">Dormitories</button>
@@ -128,90 +141,90 @@
         <div class="category-title" data-category="dorms">Dormitories</div>
         <div class="location-card" data-category="dorms">
             <div class="location-name">Block 2</div>
-            <img src="/api/placeholder/400/300" alt="Block 2" class="location-image">
+            <img src="./images/U.jpg" alt="Block 2" class="location-image">
             <a href="https://www.google.com/maps/search/?api=1&query=8.884139,38.812556" class="nav-button" target="_blank">Get Directions</a>
         </div>
         <div class="location-card" data-category="dorms">
             <div class="location-name">Block 3</div>
-            <img src="/api/placeholder/400/300" alt="Block 3" class="location-image">
+            <img src="./images/U.jpg" alt="Block 3" class="location-image">
             <a href="https://www.google.com/maps/search/?api=1&query=8.884639,38.812778" class="nav-button" target="_blank">Get Directions</a>
         </div>
         <div class="location-card" data-category="dorms">
             <div class="location-name">Block 4</div>
-            <img src="/api/placeholder/400/300" alt="Block 4" class="location-image">
+            <img src="./images/U.jpg" alt="Block 4" class="location-image">
             <a href="https://www.google.com/maps/search/?api=1&query=8.884833,38.812139" class="nav-button" target="_blank">Get Directions</a>
         </div>
         <div class="location-card" data-category="dorms">
             <div class="location-name">Block 5</div>
-            <img src="/api/placeholder/400/300" alt="Block 5" class="location-image">
+            <img src="./images/U.jpg" alt="Block 5" class="location-image">
             <a href="https://www.google.com/maps/search/?api=1&query=8.885389,38.812500" class="nav-button" target="_blank">Get Directions</a>
         </div>
         <div class="location-card" data-category="dorms">
             <div class="location-name">Block 6</div>
-            <img src="/api/placeholder/400/300" alt="Block 6" class="location-image">
+            <img src="./images/U.jpg" alt="Block 6" class="location-image">
             <a href="https://www.google.com/maps/search/?api=1&query=8.885917,38.811528" class="nav-button" target="_blank">Get Directions</a>
         </div>
         <div class="location-card" data-category="dorms">
             <div class="location-name">Block 7</div>
-            <img src="/api/placeholder/400/300" alt="Block 7" class="location-image">
+            <img src="./images/block7.jpg" alt="Block 7" class="location-image">
             <a href="https://www.google.com/maps/search/?api=1&query=.886750,38.811611" class="nav-button" target="_blank">Get Directions</a>
         </div>
         <div class="location-card" data-category="dorms">
             <div class="location-name">Block 8</div>
-            <img src="/api/placeholder/400/300" alt="Block 8" class="location-image">
+            <img src="./images/U.jpg" alt="Block 8" class="location-image">
             <a href="https://www.google.com/maps/search/?api=1&query=8.886611,38.811167" class="nav-button" target="_blank">Get Directions</a>
         </div>
         <div class="location-card" data-category="dorms">
             <div class="location-name">Block 9</div>
-            <img src="/api/placeholder/400/300" alt="Block 9" class="location-image">
+            <img src="./images/block9.jpg" alt="Block 9" class="location-image">
             <a href="https://www.google.com/maps/search/?api=1&query=8.887528,38.811306" class="nav-button" target="_blank">Get Directions</a>
         </div>
         <div class="location-card" data-category="dorms">
             <div class="location-name">Block 10</div>
-            <img src="/api/placeholder/400/300" alt="Block 10" class="location-image">
+            <img src="./images/block10.jpg" alt="Block 10" class="location-image">
             <a href="https://www.google.com/maps/search/?api=1&query=8.887306,38.810750" class="nav-button" target="_blank">Get Directions</a>
         </div>
         <div class="location-card" data-category="dorms">
             <div class="location-name">Block 11</div>
-            <img src="/api/placeholder/400/300" alt="Block 11" class="location-image">
+            <img src="./images/block11.jpg" alt="Block 11" class="location-image">
             <a href="https://www.google.com/maps/search/?api=1&query=8.888167,38.810972" class="nav-button" target="_blank">Get Directions</a>
         </div>
         <div class="location-card" data-category="dorms">
             <div class="location-name">Block 12</div>
-            <img src="/api/placeholder/400/300" alt="Block 12" class="location-image">
+            <img src="./images/block12.jpg" alt="Block 12" class="location-image">
             <a href="https://www.google.com/maps/search/?api=1&query=8.887611,38.810611" class="nav-button" target="_blank">Get Directions</a>
         </div>
         <div class="location-card" data-category="dorms">
             <div class="location-name">Block 13</div>
-            <img src="/api/placeholder/400/300" alt="Block 13" class="location-image">
+            <img src="./images/block13.jpg" alt="Block 13" class="location-image">
             <a href="https://www.google.com/maps/search/?api=1&query=8.888778,38.810694" class="nav-button" target="_blank">Get Directions</a>
         </div>
         <div class="location-card" data-category="dorms">
             <div class="location-name">Block 14</div>
-            <img src="/api/placeholder/400/300" alt="Block 14" class="location-image">
+            <img src="./images/block14.jpg" alt="Block 14" class="location-image">
             <a href="https://www.google.com/maps/search/?api=1&query=8.888250,38.810250" class="nav-button" target="_blank">Get Directions</a>
         </div>
         <div class="location-card" data-category="dorms">
             <div class="location-name">Block 16</div>
-            <img src="/api/placeholder/400/300" alt="Block 16" class="location-image">
+            <img src="./images/block16.jpg" alt="Block 16" class="location-image">
             <a href="https://www.google.com/maps/search/?api=1&query=8.890528,38.809194" class="nav-button" target="_blank">Get Directions</a>
         </div>
         <div class="location-card" data-category="dorms">
             <div class="location-name">Block 17</div>
-            <img src="/api/placeholder/400/300" alt="Block 17" class="location-image">
+            <img src="./images/block17.jpg" alt="Block 17" class="location-image">
             <a href="https://www.google.com/maps/search/?api=1&query=8.891111,38.808861" class="nav-button" target="_blank">Get Directions</a>
         </div>
         <!-- Add Block 3-17 following the same pattern -->
 
         <div class="location-card" data-category="dorms">
             <div class="location-name">Block 25</div>
-            <img src="/api/placeholder/400/300" alt="Block 25" class="location-image">
+            <img src="./images/block25.jpg" alt="Block 25" class="location-image">
             <a href="https://www.google.com/maps/search/?api=1&query=8.893556,38.809139" class="nav-button" target="_blank">Get Directions</a>
         </div>
 
         <div class="location-card" data-category="dorms">
             <div class="location-name">Block 28</div>
-            <img src="/api/placeholder/400/300" alt="Block 28" class="location-image">
+            <img src="./images/block28.jpg" alt="Block 28" class="location-image">
             <a href="https://www.google.com/maps/search/?api=1&query=8.891194,38.810417" class="nav-button" target="_blank">Get Directions</a>
         </div>
 
@@ -221,90 +234,90 @@
         <!-- Cafeteria -->
         <div class="location-card" data-category="services">
             <div class="location-name">Student Cafeteria</div>
-            <img src="/api/placeholder/400/300" alt="AASTU Student Cafeteria" class="location-image">
-            <a href="https://www.google.com/maps/search/?api=1&query=8.887639,38.810111" class="nav-button" target="_blank">Get Directions</a>
+            <img src="./images/dining.jpg" alt="AASTU Student Cafeteria" class="location-image">
+            <a href="https://www.google.com/maps/search/?api=1&query=8.887488, 38.809472" class="nav-button" target="_blank">Get Directions</a>
         </div>
 
         <!-- Libraries -->
         <div class="location-card" data-category="services">
             <div class="location-name">Engineering Library</div>
-            <img src="/api/placeholder/400/300" alt="AASTU Engineering Library" class="location-image">
+            <img src="./images/engineering.jpg" alt="AASTU Engineering Library" class="location-image">
             <a href="https://www.google.com/maps/search/?api=1&query= 8.885583,38.810278" class="nav-button" target="_blank">Get Directions</a>
         </div>
 
         <div class="location-card" data-category="services">
             <div class="location-name">Digital Library</div>
-            <img src="/api/placeholder/400/300" alt="AASTU Digital Library" class="location-image">
+            <img src="./images/digital.jpg" alt="AASTU Digital Library" class="location-image">
             <a href="https://www.google.com/maps/search/?api=1&query=8.884889,38.810667" class="nav-button" target="_blank">Get Directions</a>
         </div>
 
         <!-- Registration -->
         <div class="location-card" data-category="services">
             <div class="location-name">Registration Office</div>
-            <img src="/api/placeholder/400/300" alt="AASTU Registration Office" class="location-image">
+            <img src="./images/registral.jpg" alt="AASTU Registration Office" class="location-image">
             <a href="https://www.google.com/maps/search/?api=1&query=8.884667,38.809806" class="nav-button" target="_blank">Get Directions</a>
         </div>
 
         <!-- Lounges -->
         <div class="location-card" data-category="services">
             <div class="location-name">Kebnesh Lounge</div>
-            <img src="/api/placeholder/400/300" alt="Kebnesh Lounge" class="location-image">
+            <img src="./images/kebnesh.jpg" alt="Kebnesh Lounge" class="location-image">
             <a href="https://www.google.com/maps/search/?api=1&query=8.886194,38.810556" class="nav-button" target="_blank">Get Directions</a>
         </div>
 
         <div class="location-card" data-category="services">
             <div class="location-name">KK Lounge</div>
-            <img src="/api/placeholder/400/300" alt="KK Lounge" class="location-image">
+            <img src="./images/U.jpg" alt="KK Lounge" class="location-image">
             <a href="https://www.google.com/maps/search/?api=1&query=8.887222,38.810222" class="nav-button" target="_blank">Get Directions</a>
         </div>
 
         <div class="location-card" data-category="services">
             <div class="location-name">Workers Lounge</div>
-            <img src="/api/placeholder/400/300" alt="Workers Lounge" class="location-image">
+            <img src="./images/workers.jpg" alt="Workers Lounge" class="location-image">
             <a href="https://www.google.com/maps/search/?api=1&query=8.883639,38.811611" class="nav-button" target="_blank">Get Directions</a>
         </div>
 
         <div class="location-card" data-category="services">
             <div class="location-name">Teachers Lounge</div>
-            <img src="/api/placeholder/400/300" alt="Teachers Lounge" class="location-image">
+            <img src="./images/teachers.jpg" alt="Teachers Lounge" class="location-image">
             <a href="https://www.google.com/maps/search/?api=1&query=8.884000,38.811639" class="nav-button" target="_blank">Get Directions</a>
         </div>
 
         <!-- Classrooms -->
         <div class="location-card" data-category="services">
             <div class="location-name">Block 57 Classrooms</div>
-            <img src="/api/placeholder/400/300" alt="Block 57" class="location-image">
+            <img src="./images/block57.jpg" alt="Block 57" class="location-image">
             <a href="https://www.google.com/maps/search/?api=1&query=8.885528,38.809417" class="nav-button" target="_blank">Get Directions</a>
         </div>
 
         <div class="location-card" data-category="services">
             <div class="location-name">Block 58 Classrooms</div>
-            <img src="/api/placeholder/400/300" alt="Block 58" class="location-image">
+            <img src="./images/block58.jpg" alt="Block 58" class="location-image">
             <a href="https://www.google.com/maps/search/?api=1&query=8.885306,38.809028" class="nav-button" target="_blank">Get Directions</a>
         </div>
 
         <div class="location-card" data-category="services">
             <div class="location-name">Block 59 Classrooms</div>
-            <img src="/api/placeholder/400/300" alt="Block 59" class="location-image">
+            <img src="./images/block59.jpg" alt="Block 59" class="location-image">
             <a href="https://www.google.com/maps/search/?api=1&query=8.885056,38.809694" class="nav-button" target="_blank">Get Directions</a>
         </div>
 
         <!-- Other Services -->
         <div class="location-card" data-category="services">
             <div class="location-name">Lecture Theater</div>
-            <img src="/api/placeholder/400/300" alt="Lecture Theater" class="location-image">
+            <img src="./images/LT.jpg" alt="Lecture Theater" class="location-image">
             <a href="https://www.google.com/maps/search/?api=1&query=8.883972,38.810806" class="nav-button" target="_blank">Get Directions</a>
         </div>
 
         <div class="location-card" data-category="services">
             <div class="location-name">Old Graduation Hall</div>
-            <img src="/api/placeholder/400/300" alt="Old Graduation Hall" class="location-image">
+            <img src="./images/oldGad.jpg" alt="Old Graduation Hall" class="location-image">
             <a href="https://www.google.com/maps/search/?api=1&query=8.887000,38.809056" class="nav-button" target="_blank">Get Directions</a>
         </div>
 
         <div class="location-card" data-category="services">
             <div class="location-name">Campus Shop</div>
-            <img src="/api/placeholder/400/300" alt="Campus Shop" class="location-image">
+            <img src="./images/schoolShop.jpg" alt="Campus Shop" class="location-image">
             <a href="https://www.google.com/maps/search/?api=1&query=8.886944,38.810972" class="nav-button" target="_blank">Get Directions</a>
         </div>
     </div>
@@ -331,6 +344,20 @@
 
         // Initialize with all locations shown
         showCategory('all');
+
+        let imagesVisible = true;
+        
+        function toggleImages() {
+            const images = document.querySelectorAll('.location-image');
+            images.forEach(img => {
+                img.style.display = imagesVisible ? 'none' : '';
+            });
+            imagesVisible = !imagesVisible;
+        }
+        if(imagesVisible === true)
+        {
+            toggleImages();
+        }
 
         // Search functionality
         const searchInput = document.getElementById('searchInput');
