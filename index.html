@@ -322,7 +322,8 @@
     </div>
 
     <script>
-        let imageVisibility = false;
+        let imageVisibility = true;
+        window.onload = toggleImages();
 
         function toggleImages() {
             imageVisibility = !imageVisibility;
@@ -330,8 +331,10 @@
             images.forEach(img => {
                 if (imageVisibility) {
                     img.setAttribute('src', img.getAttribute('data-src'));
+                    img.style.display = ''; // Reset display property
                 } else {
                     img.removeAttribute('src');
+                    img.style.display = 'none'; // Hide the image
                 }
             });
         }
