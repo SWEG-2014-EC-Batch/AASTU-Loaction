@@ -1,3 +1,19 @@
+function searchLocations() {
+    const input = document.getElementById('searchInput');
+    const filter = input.value.toLowerCase();
+    
+    const locationCards = document.querySelectorAll('.location-card');
+    
+    locationCards.forEach(function(card) {
+        const locationName = card.querySelector('.location-name').textContent.toLowerCase();
+        if (locationName.includes(filter)) {
+            card.style.display = ''; // Show the card
+        } else {
+            card.style.display = 'none'; // Hide the card
+        }
+    });
+}
+
 function showCategory(category) {
     const cards = document.querySelectorAll('.location-card');
     const buttons = document.querySelectorAll('.category-btn');
