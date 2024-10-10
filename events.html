@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freshman Event Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a202c;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .card {
+            background-color: #2d3748;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .card-header {
+            padding: 20px;
+            border-bottom: 1px solid #4a5568;
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 0 8px 0;
+        }
+
+        .card-description {
+            color: #a0aec0;
+            margin: 0;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .event-item {
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #4a5568;
+        }
+
+        .event-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .event-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .event-title {
+            font-weight: 500;
+        }
+
+        .event-details {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #a0aec0;
+        }
+
+        .event-date {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .chevron {
+            transition: transform 0.3s ease;
+        }
+
+        .chevron.up {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="card-header">
+            <a href="./index.html" style="text-decoration: none; color: white; text-align: center;"><h1 class="card-title" style="background-color: #4F88CF; border-radius: 5rem; max-width: 200px; text-align: center;" >Go to main</h1></a>
+            <h2 class="card-title">Freshman Event Tracker</h2>
+            <p class="card-description">Your first week at university</p>
+        </div>
+        <div class="card-content" id="eventContainer"></div>
+    </div>
+
+    <script>
+        const eventData = [
+            {
+                id: 1,
+                title: 'Dorm Assignment',
+                date: 'Sunday - Monday',
+                details: 'Freshmen will be assigned to their dormitories. Make sure to check in at the designated time and bring all necessary documents.'
+            },
+            {
+                id: 2,
+                title: 'Orientation',
+                date: 'Tuesday - Wednesday',
+                details: 'Attend orientation sessions to familiarize yourself with the campus, services, and meet fellow students. Various workshops and tours will be available.'
+            },
+            {
+                id: 3,
+                title: 'Registration',
+                date: 'Thursday - Friday',
+                details: 'Complete course registration and finalize your schedule. Academic advisors will be available to assist you with any questions.'
+            },
+            {
+                id: 4,
+                title: 'Classes Begin',
+                date: 'Monday',
+                details: 'First day of classes for the new semester. Double-check your schedule and classroom locations before this day.'
+            }
+        ];
+
+        let expandedId = null;
+
+        function toggleExpand(id) {
+            expandedId = expandedId === id ? null : id;
+            renderEvents();
+        }
+
+        function renderEvents() {
+            const container = document.getElementById('eventContainer');
+            container.innerHTML = '';
+
+            eventData.forEach(item => {
+                const eventElement = document.createElement('div');
+                eventElement.className = 'event-item';
+                eventElement.innerHTML = `
+                    <div class="event-header" onclick="toggleExpand(${item.id})" role="button" aria-expanded="${expandedId === item.id}" aria-controls="event-details-${item.id}">
+                        <span class="event-title">${item.title}</span>
+                        <span class="chevron ${expandedId === item.id ? 'up' : ''}">▼</span>
+                    </div>
+                    ${expandedId === item.id ? `
+                        <div id="event-details-${item.id}" class="event-details">
+                            <p class="event-date">${item.date}</p>
+                            <p>${item.details}</p>
+                        </div>
+                    ` : ''}
+                `;
+                container.appendChild(eventElement);
+            });
+        }
+
+        renderEvents();
+    </script>
+</body>
+</html>
