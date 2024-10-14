@@ -103,27 +103,57 @@
         const eventData = [
             {
                 id: 1,
-                title: 'Dorm Assignment',
-                date: 'Sunday - Monday',
-                details: 'Freshmen will be assigned to their dormitories. Make sure to check in at the designated time and bring all necessary documents.'
+                title: 'Dorm Assignment 1',
+                date: 'Sunday (03/02/2017 E.C)',
+                time: '2:30 - 10:00',
+                details: 'Freshmen with names from "A-L" will be assigned to their dormitories. Make sure to check in at the designated time and bring all necessary documents.',
+                location: 'On your respective dorms(Can be found in the previous pages.)',
+                locationName: 'Respective dorms'
             },
             {
                 id: 2,
-                title: 'Orientation',
-                date: 'Tuesday - Wednesday',
-                details: 'Attend orientation sessions to familiarize yourself with the campus, services, and meet fellow students. Various workshops and tours will be available.'
+                title: 'Dorm Assignment 2',
+                date: 'Monday (04/02/2017 E.C)',
+                time: '2:30 - 10:00',
+                details: 'Freshmen with names from "M-Z" will be assigned to their dormitories. Make sure to check in at the designated time and bring all necessary documents.',
+                location: './index.html',
+                locationName: 'Respective dorms'
             },
             {
                 id: 3,
-                title: 'Registration',
-                date: 'Thursday - Friday',
-                details: 'Complete course registration and finalize your schedule. Academic advisors will be available to assist you with any questions.'
+                title: 'Orientation',
+                date: 'Tuesday - Wednesday (05 - 06 /02/2017 E.C)',
+                time:'3:00 - 10:30',
+                details: 'Attend orientation sessions to familiarize yourself with the campus, services, and meet fellow students. Various workshops and tours will be available.',
+                location: 'https://www.google.com/maps/search/?api=1&query=8.887000,38.809056',
+                locationName: 'Old Graduation Hall'
             },
             {
                 id: 4,
+                title: 'Orientation Final',
+                date: 'Wednesday (06/02/2017 E.C)',
+                time:'7:30 - 10:30',
+                details: "Attend orientation sessions to get summarization of the university and it's services.",
+                location: 'https://www.google.com/maps/search/?api=1&query=8.887453, 38.800016',
+                locationName: 'New Graduation Hall'
+            },
+            {
+                id: 5,
+                title: 'Registration',
+                date: 'Thursday (07/02/2017 E.C)',
+                time:'3:00 - 10:30',
+                details: 'Complete course registration and finalize your schedule. Academic advisors will be available to assist you with any questions.',
+                location: 'https://www.google.com/maps/search/?api=1&query=8.884667,38.809806',
+                locationName: 'Registration Office'
+            },
+            {
+                id: 6,
                 title: 'Classes Begin',
-                date: 'Monday',
-                details: 'First day of classes for the new semester. Double-check your schedule and classroom locations before this day.'
+                date: 'Monday (11/02/2017 E.C)',
+                time: 'Depending on schedule.',
+                details: 'First day of classes for the new semester. Double-check your schedule and classroom locations before this day.',
+                location: './index.html',
+                locationName: 'Respective blocks'
             }
         ];
 
@@ -149,7 +179,9 @@
                     ${expandedId === item.id ? `
                         <div id="event-details-${item.id}" class="event-details">
                             <p class="event-date">${item.date}</p>
+                            <p class="event-date">${item.time}</p>
                             <p>${item.details}</p>
+                            <p> <a href=${item.location} target="_blank" style="text-decoration: none; color: white;">${item.locationName}</p>
                         </div>
                     ` : ''}
                 `;
